@@ -4,10 +4,10 @@ import logo from "../assets/logo.png";
 const Navbar = () => {
   const links = (
     <>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/about">About</NavLink>
-      <NavLink to="/coaching">Coaching</NavLink>
-      <NavLink to="/dashboard">Dashboard</NavLink>
+      <NavLink className='btn btn-outline' to="/">Home</NavLink>
+      <NavLink className='btn btn-outline' to="/about">About</NavLink>
+      <NavLink className='btn btn-outline' to="/coaching">Coaching</NavLink>
+      <NavLink className='btn btn-outline active:bg-neutral' to="/dashboard">Dashboard</NavLink>
     </>
   );
   return (
@@ -52,7 +52,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1 gap-5 *:text-lg font-Roboto uppercase">
+            <ul className="menu menu-horizontal px-1 gap-5 *:text-sm font-Roboto uppercase">
               {links}
             </ul>
           </div>
