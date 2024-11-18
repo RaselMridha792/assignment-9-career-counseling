@@ -12,6 +12,8 @@ const DataContext = ({children}) => {
         }
         loadData();
     },[])
+
+    // sign up method implement 
     const DataInfo = {
         service,
     }
