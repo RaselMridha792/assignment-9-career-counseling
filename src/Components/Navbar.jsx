@@ -1,13 +1,35 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
+import { useContext } from "react";
+import { AllContext } from "../contextprovider/DataContext";
 
 const Navbar = () => {
+  const { signOutUser, user } = useContext(AllContext);
+
+  const handleSignOut = (e) => {
+    e.preventDefault();
+    signOutUser()
+      .then(() => {
+        console.log("sign out successfull");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   const links = (
     <>
-      <NavLink className='btn btn-outline' to="/">Home</NavLink>
-      <NavLink className='btn btn-outline' to="/about">About</NavLink>
-      <NavLink className='btn btn-outline' to="/coaching">Coaching</NavLink>
-      <NavLink className='btn btn-outline active:bg-neutral' to="/dashboard">Dashboard</NavLink>
+      <NavLink className="btn btn-outline" to="/">
+        Home
+      </NavLink>
+      <NavLink className="btn btn-outline" to="/about">
+        About
+      </NavLink>
+      <NavLink className="btn btn-outline" to="/coaching">
+        Coaching
+      </NavLink>
+      <NavLink className="btn btn-outline active:bg-neutral" to="/dashboard">
+        Dashboard
+      </NavLink>
     </>
   );
   return (
@@ -48,7 +70,10 @@ const Navbar = () => {
               className="flex items-center justify-center uppercase font-bold text-xl"
             >
               <img className="w-12" src={logo} alt="Career Compass" />
-             <h1 className="font-bold md:text-2xl text-blue-800"> Career Compass</h1>
+              <h1 className="font-bold md:text-2xl text-blue-800">
+                {" "}
+                Career Compass
+              </h1>
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -57,7 +82,19 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="navbar-end">
-            <Link className="btn btn-neutral" to='/login'>Login</Link>
+            {user ? (
+              <>
+                <Link onClick={handleSignOut} className="btn btn-neutral">
+                  Sign Out
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link className="btn btn-neutral" to="/login">
+                  Login
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>

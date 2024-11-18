@@ -10,7 +10,6 @@ const ServiceCard = ({ singleService }) => {
     service_Id,
     service_name,
   } = singleService;
-  console.log(singleService);
   return (
     <>
       <div className="card bg-base-100 border rounded-none font-Roboto hover:shadow-2xl duration-300 ease-out ease-in hover:border-blue-500">
