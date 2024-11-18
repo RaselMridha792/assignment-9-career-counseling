@@ -48,7 +48,7 @@ const Navbar = () => {
               className="flex items-center justify-center uppercase font-bold text-xl"
             >
               <img className="w-12" src={logo} alt="Career Compass" />
-              Career Compass
+             <h1 className="font-bold md:text-2xl text-blue-800"> Career Compass</h1>
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
