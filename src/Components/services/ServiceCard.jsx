@@ -12,7 +12,7 @@ const ServiceCard = ({ singleService }) => {
   } = singleService;
   return (
     <>
-      <div className="card bg-base-100 border rounded-none font-Roboto hover:shadow-2xl duration-300 ease-out ease-in hover:border-blue-500">
+      <div data-aos="fade-up" className="card bg-base-100 border rounded-none font-Roboto hover:shadow-2xl duration-300 ease-out ease-in hover:border-blue-500">
         <figure>
           <img className="w-full h-64 object-cover" src={image} alt="Shoes" />
         </figure>

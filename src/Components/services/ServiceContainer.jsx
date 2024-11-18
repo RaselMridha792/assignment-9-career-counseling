@@ -1,14 +1,25 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AllContext } from "../../contextprovider/DataContext";
 import ServiceCard from "./ServiceCard";
 import Review from "../Review";
 
+// for aos animation
+import AOS from "aos";
+import "aos/dist/aos.css";
 const ServiceContainer = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out'
+    });
+    AOS.refresh();
+  }, []);
+
   const { service } = useContext(AllContext);
   return (
     <>
       <div className="md:w-10/12 w-11/12 mx-auto my-20">
-        <div className="mb-10">
+        <div data-aos="fade-right" className="mb-10">
           <h1 className="font-Playfair lg:text-6xl md:text-5xl text-3xl py-5">
             <span className="text-blue-500">
               Our Team serving you <br />
@@ -32,7 +43,7 @@ const ServiceContainer = () => {
             ))}
         </div>
         <div className="my-20">
-        <Review></Review>
+          <Review></Review>
         </div>
       </div>
     </>

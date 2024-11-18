@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import heroImg from "../assets/hero-bg-1.jpg";
 import heroImg2 from "../assets/hero-bg-2.jpg";
 import heroImg3 from "../assets/hero-bg-3.jpg";
+
 const Header = () => {
+
   return (
     <>
       <div className="carousel w-full">
@@ -15,7 +17,7 @@ const Header = () => {
           >
             <div className="hero-overlay bg-white md:bg-opacity-10 bg-opacity-50"></div>
             <div className="md:w-10/12 w-11/12 mx-auto font-Roboto">
-              <div className="max-w-xl">
+              <div data-aos="fade-up" className="max-w-xl">
                 <p className="md:text-2xl uppercase font-semibold py-5">
                   Turn your passion into reality
                 </p>

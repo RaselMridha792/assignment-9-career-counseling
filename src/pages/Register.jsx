@@ -6,17 +6,17 @@ import { AllContext } from "../contextprovider/DataContext";
 import { FaRegEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 const Register = () => {
+  const { createUser, signInGoogle, updateUserProfile } = useContext(AllContext);
   const [errorMessage, setErrorMessage] = useState("");
   const [success, setSuccess] = useState(false);
   const [toogle, setToogle] = useState(true);
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-  const { createUser, signInGoogle } = useContext(AllContext);
+  
   const navigate = useNavigate();
 
   const handleToogleEye = () =>{
     setToogle(!toogle);
   }
-
 
   const handleRegister = (e) => {
     setErrorMessage('');
@@ -38,9 +38,15 @@ const Register = () => {
     e.target.reset();
     createUser(email, password)
       .then((result) => {
-        console.log("account created successfully");
+        alert("account created successfully");
         setSuccess(true);
-        navigate('/');
+        updateUserProfile({displayName:name, photoURL:photo})
+        .then(()=>{
+          navigate('/');
+
+        }).catch(error=>{
+          alert(error.message);
+        })
       })
       .catch((error) => {
         console.log(error.message);
@@ -96,7 +102,7 @@ const Register = () => {
                     type="text"
                     name="photo"
                     placeholder="photo url"
-                    className="input input-bordered bg-opacity-20"
+                    className="input input-bordered bg-opacity-20 text-black"
                     required
                   />
                 </div>

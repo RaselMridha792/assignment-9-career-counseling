@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { useContext } from "react";
 import { AllContext } from "../contextprovider/DataContext";
+import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
   const { signOutUser, user } = useContext(AllContext);
@@ -81,20 +82,33 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <div className="navbar-end">
-            {user ? (
-              <>
-                <Link onClick={handleSignOut} className="btn btn-neutral">
-                  Sign Out
-                </Link>
-              </>
-            ) : (
-              <>
-                <Link className="btn btn-neutral" to="/login">
-                  Login
-                </Link>
-              </>
-            )}
+          <div className="navbar-end gap-5">
+            <div className="bg-white rounded-full text-2xl">
+              {user && user?.email ? (
+                <>
+                  <div>
+                    <img className="w-10 rounded-full" src={user.photoURL} alt={user.name} />
+                  </div>
+                </>
+              ) : (
+                <><div className="text-5xl"><CgProfile /></div></>
+              )}
+            </div>
+            <div>
+              {user ? (
+                <>
+                  <Link onClick={handleSignOut} className="btn btn-neutral">
+                    Log Out
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link className="btn btn-neutral" to="/login">
+                    Login
+                  </Link>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </div>

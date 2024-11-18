@@ -1,11 +1,12 @@
 import card1 from "../assets/card-1.jpg";
 import card2 from "../assets/card-2.jpg";
 import card3 from "../assets/card-3.jpg";
+
 const CardContainer = () => {
   return (
     <>
       <div className="md:w-7/12 w-11/12 mx-auto grid lg:grid-cols-3 grid-cols-1 gap-5 -mt-5 mb-32">
-        <div className="card bg-base-100 rounded-none border">
+        <div data-aos="fade-right" className="card bg-base-100 rounded-none border">
           <figure>
             <img src={card2} alt="" />
           </figure>
@@ -27,7 +28,7 @@ const CardContainer = () => {
             </p>
           </div>
         </div>
-        <div className="card bg-base-100 rounded-none border">
+        <div data-aos="fade-up" className="card bg-base-100 rounded-none border">
           <figure>
             <img src={card1} alt="" />
           </figure>
@@ -48,7 +49,7 @@ const CardContainer = () => {
             </p>
           </div>
         </div>
-        <div className="card bg-base-100 rounded-none border">
+        <div data-aos="fade-left" className="card bg-base-100 rounded-none border">
           <figure>
             <img src={card3} alt="" />
           </figure>

@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../Firebase.init";
 
@@ -59,6 +60,10 @@ const DataContext = ({ children }) => {
     return signOut(auth)
   }
 
+  const updateUserProfile = (updatedData) =>{
+    return updateProfile(auth.currentUser, updatedData);
+  }
+
   const DataInfo = {
     service,
     createUser,
@@ -67,6 +72,7 @@ const DataContext = ({ children }) => {
     signOutUser,
     user,
     setUser,
+    updateUserProfile,
 
   };
 
