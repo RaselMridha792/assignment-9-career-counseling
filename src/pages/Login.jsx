@@ -3,11 +3,10 @@ import herobg from "../assets/hero-bg-2.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEyeSlash, FaGoogle, FaRegEye } from "react-icons/fa";
 import { AllContext } from "../contextprovider/DataContext";
-import { auth } from "../Firebase.init";
-import { sendPasswordResetEmail } from "firebase/auth";
+import { toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
-  const { loginUser, signInGoogle } = useContext(AllContext);
+  const { loginUser, signInGoogle, handleResetPassword } = useContext(AllContext);
   const [errorMessage, setErrorMessage] = useState("");
   const emailRef = useRef();
 
@@ -30,11 +29,11 @@ const Login = () => {
     e.target.reset();
     loginUser(email, password)
       .then((result) => {
-        console.log(result);
+        toast.success('login successfull')
         navigate("/");
       })
       .catch((error) => {
-        console.log(error.message);
+        toast.success(error.message);
         setErrorMessage(error.message);
       });
   };
@@ -42,23 +41,21 @@ const Login = () => {
   const handleLoginWithGoogle = () => {
     signInGoogle()
       .then((result) => {
-        console.log(result);
         navigate("/");
       })
       .catch((error) => {
-        console.log(error.message);
+        toast.error(error.message);
       });
   };
 
-  const handleResetPassword = () =>{
-    const email = emailRef.current.value;
-    if(email){
-      sendPasswordResetEmail(auth, email)
-      .then(()=>{
-        alert('password reset email sent, please check your email')
-      }).catch(error=>{
-        alert(error.message)
-      })
+  const handleResetPass = () =>{
+    if(emailRef.length<2){
+      handleResetPassword(emailRef)
+      navigate('/forget');
+    }
+    else{
+      toast.error('please enter your email first')
+      
     }
   }
   return (
@@ -70,6 +67,7 @@ const Login = () => {
         }}
       >
         <div className="hero-overlay bg-gray-400 bg-opacity-20"></div>
+        <ToastContainer></ToastContainer>
         <div className="hero-content text-neutral-content text-center">
           <div className=" m-t-20 font-Roboto bg-white bg-opacity-70 shrink-0 shadow-2xl">
             <form onSubmit={handleLogin} className="card-body">
@@ -107,9 +105,9 @@ const Login = () => {
                   {toogle ? <FaRegEye /> : <FaEyeSlash />}
                 </div>
                 <label className="label">
-                  <a onClick={handleResetPassword} href="#" className="label-text-alt link link-hover">
+                  <Link onClick={handleResetPass} className="label-text-alt link link-hover">
                     Forgot password?
-                  </a>
+                  </Link>
                 </label>
               </div>
               <div className="form-control mt-6 space-y-5">

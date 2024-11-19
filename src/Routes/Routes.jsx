@@ -6,6 +6,7 @@ import Register from "../pages/Register";
 import About from "../pages/About";
 import Dashboard from "../pages/Dashboard";
 import Errorpage from "../pages/Errorpage";
+import ForgetPassword from "../pages/ForgetPassword";
 
 
 const Routes = createBrowserRouter([
@@ -33,6 +34,10 @@ const Routes = createBrowserRouter([
       {
         path: '/dashboard',
         element: <Dashboard></Dashboard>
+      },
+      {
+        path: '/forget',
+        element: <ForgetPassword></ForgetPassword>
       }
     ],
   },

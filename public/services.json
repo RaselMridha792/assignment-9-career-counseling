@@ -1,0 +1,134 @@
+[
+  {
+    "service_name": "Personalized Career Assessment",
+    "service_Id": "1",
+    "description": "Personalized career assessments are designed to help clients discover their interests, strengths, and values. By using scientifically-backed personality tests and career aptitude surveys, counselors can guide individuals toward careers that align with their intrinsic qualities. These assessments often cover cognitive abilities, preferences, and even work-life balance preferences, helping individuals understand which career paths will likely bring them satisfaction and success. The results are then used to provide tailored recommendations for job roles, industries, and educational paths suited to the client's profile.",
+    "category": "online",
+    "pricing": "$150",
+    "counselor_name": "John Doe",
+    "image": "https://i.ibb.co.com/fn51jRs/Getty-Images-1041153488-f70513439f2e410da0e0555354876d2b.jpg",
+    "duration": "01-01-24 2-3pm",
+    "rating": 4.5
+  },
+  {
+    "service_name": "Resume and CV Review",
+    "service_Id": "2",
+    "description": "A well-crafted resume is a vital tool in the job market. The resume and CV review service provides a detailed evaluation of an individual's resume, focusing on formatting, content, and relevance. The counselor helps to enhance the document’s appeal by ensuring it highlights key achievements, relevant experiences, and skills that match the targeted job descriptions. The service also offers guidance on keywords optimization for applicant tracking systems (ATS), ensuring that resumes stand out and increase the chances of getting noticed by hiring managers.",
+    "category": "online",
+    "pricing": "$200",
+    "counselor_name": "Jane Smith",
+    "image": "https://i.ibb.co.com/wCdWpXC/istockphoto-1409440932-612x612.jpg",
+    "duration": "04-05-24 10-11am",
+    "rating": 4.7
+  },
+  {
+    "service_name": "Job Search Strategy Consultation",
+    "service_Id": "3",
+    "description": "Job search strategy consultations provide clients with a structured plan to navigate the job market effectively. This service includes tips on finding job opportunities, optimizing online profiles (such as LinkedIn), and mastering the art of networking. Counselors help clients understand the most effective job search platforms, offer advice on applying to the right roles, and assist in setting realistic timelines for job applications. This service also emphasizes the importance of job tailoring—adjusting resumes and cover letters to fit each position and standing out from other candidates.",
+    "category": "online",
+    "pricing": "$250",
+    "counselor_name": "Michael Brown",
+    "image": "https://i.ibb.co.com/1rbSR5p/How-to-Develop-a-Job-Search-Strategy-That-Works-1.jpg",
+    "duration": "10-11-24 7-8pm",
+    "rating": 4.8
+  },
+  {
+    "service_name": "Interview Preparation",
+    "service_Id": "4",
+    "description": "Interview preparation is crucial for job seekers to confidently showcase their qualifications. In this service, career counselors conduct mock interviews based on the roles clients are targeting. They provide feedback on responses, body language, and the overall impression given during the interview. Counselors also offer insights on common interview questions, how to handle difficult scenarios, and how to frame answers effectively. This service builds confidence and ensures that clients are well-prepared to face recruiters and hiring managers, increasing their chances of success.",
+    "category": "offline",
+    "pricing": "$180",
+    "counselor_name": "Sarah Johnson",
+    "image": "https://i.ibb.co.com/dtMKd66/how-to-prepare-for-a-job-interview.webp",
+    "duration": "06-12-24 3-4pm",
+    "rating": 4.3
+  },
+  {
+    "service_name": "Career Path Mapping",
+    "service_Id": "5",
+    "description": "Career path mapping helps individuals create a clear vision for their professional journey. This service involves working with a counselor to define short- and long-term career goals and designing a roadmap to achieve them. The process includes identifying the steps needed for career advancement, such as skill development, certifications, and job experience. Counselors provide realistic timelines for achieving milestones and continuously track progress. The mapped career path ensures that clients stay focused on their professional growth and have a structured approach toward reaching their goals.",
+    "category": "group",
+    "pricing": "$300",
+    "counselor_name": "Robert Lee",
+    "image": "https://i.ibb.co.com/j3k1WqY/66c8e83755e05004ce385320-66c79c4e871f965d44ad074e-Colorful-Minimalist-Linear-Steps-Circular-Diagram.webp",
+    "duration": "12-02-24 1-2pm",
+    "rating": 4.6
+  },
+  {
+    "service_name": "Skill Gap Analysis",
+    "service_Id": "6",
+    "description": "Skill gap analysis identifies the differences between a client’s current skill set and the skills required for their desired career. Counselors assess a person’s professional qualifications, knowledge, and experience, then compare it with industry standards or the specific requirements for the client’s target job roles. Based on this analysis, the counselor suggests relevant training programs, certifications, or work experience that can bridge the skill gap. This service is particularly useful for individuals looking to switch careers, as it helps them identify the skills they need to succeed in a new field.",
+    "category": "offline",
+    "pricing": "$220",
+    "counselor_name": "Emily White",
+    "image": "https://i.ibb.co.com/6Xnwg8d/Gap-Analysis1.webp",
+    "duration": "19-03-24 4-5pm",
+    "rating": 4.4
+  },
+  {
+    "service_name": "Job Market Insights",
+    "service_Id": "7",
+    "description": "Understanding the current job market is essential for job seekers and career changers. Job market insights involve gathering and analyzing data on employment trends, salary ranges, in-demand skills, and industry growth. Career counselors use this information to inform clients about the most promising career sectors and potential opportunities. They also provide guidance on salary expectations, geographical factors, and long-term job security, helping individuals make well-informed decisions. This service empowers clients to navigate the ever-changing job market with confidence and clarity.",
+    "category": "online",
+    "pricing": "$170",
+    "counselor_name": "David Green",
+    "image": "https://i.ibb.co.com/f0C0XXV/Q3-22-7.png",
+    "duration": "22-06-24 6-7pm",
+    "rating": 4.7
+  },
+  {
+    "service_name": "Industry-specific Counseling",
+    "service_Id": "8",
+    "description": "Industry-specific counseling offers targeted guidance for individuals interested in pursuing careers within a specific sector, such as healthcare, technology, finance, or education. This service involves in-depth knowledge of industry trends, challenges, and opportunities. Career counselors assist clients in understanding the qualifications and experiences necessary for success in the chosen field. They also provide advice on industry-specific job roles, required certifications, and career advancement strategies. By focusing on a particular industry, this service ensures clients are well-prepared to enter and excel within their chosen professional domain.",
+    "category": "group",
+    "pricing": "$280",
+    "counselor_name": "Jessica Adams",
+    "image": "https://i.ibb.co.com/LY2kcpR/1701693760916.jpg",
+    "duration": "15-08-24 9-10am",
+    "rating": 4.9
+  },
+  {
+    "service_name": "College and University Admissions Guidance",
+    "service_Id": "9",
+    "description": "College and university admissions guidance is aimed at students navigating the often-complicated application process. Counselors help students select the right colleges or universities based on their academic interests, budget, and career goals. This service includes assistance with application essays, interview preparation, and ensuring that students meet all deadlines. Counselors provide insights on scholarships, financial aid, and the overall admissions process. With expert guidance, students can feel confident in their choices, maximizing their chances of acceptance into institutions that align with their academic and professional ambitions.",
+    "category": "group",
+    "pricing": "$350",
+    "counselor_name": "William Harris",
+    "image": "https://i.ibb.co.com/KXwj5pC/ow-to-Effectively-Guide-Students-on-College-Admissions.jpg",
+    "duration": "27-09-24 12-1pm",
+    "rating": 4.8
+  },
+  {
+    "service_name": "Networking Strategies",
+    "service_Id": "10",
+    "description": "Networking is a critical part of career success, and this service helps clients build and expand their professional network. Counselors teach strategies for effectively connecting with industry professionals, including how to use LinkedIn, attend industry events, and participate in online communities. They also guide clients on how to start conversations, maintain relationships, and create opportunities for collaboration. With strong networking skills, clients can open doors to job opportunities, mentorships, and collaborations that might not be available through traditional job search methods.",
+    "category": "online",
+    "pricing": "$180",
+    "counselor_name": "Lucas Scott",
+    "image": "https://i.ibb.co.com/GQwm5vK/1701066936746.png",
+    "duration": "14-10-24 8-9am",
+    "rating": 4.6
+  },
+  {
+    "service_name": "Career Transition Support",
+    "service_Id": "11",
+    "description" : "Career transition support is essential for individuals who want to shift to a new career path, whether due to personal interests, changes in the job market, or a desire for growth. Counselors help individuals identify transferable skills and navigate the process of rebranding themselves for a new industry. This service includes advice on updating resumes, leveraging existing experience in new fields, and overcoming challenges associated with making a career switch. Counselors may also assist with job search strategies, making the transition smoother and increasing the chances of a successful career change.",
+    "category": "online",
+    "pricing": "$400",
+    "counselor_name": "Sophia Clark",
+    "image": "https://i.ibb.co.com/T463CjC/ccia11.jpg",
+    "duration": "14-10-24 7-8am",
+    "rating": 4.9
+  },
+  {
+    "service_name": "Work-life Balance Coaching",
+    "service_Id": "12",
+    "description" : "Work-life balance coaching supports individuals who are struggling to manage the demands of their professional and personal lives. This service helps clients establish healthy boundaries, prioritize tasks, and develop strategies to reduce stress and avoid burnout. Career counselors work with individuals to create personalized plans that allow them to succeed in their careers without sacrificing personal time, relationships, or health. The service also covers time management techniques, stress-relief practices, and the importance of mental health, ensuring that clients achieve long-term satisfaction and productivity in both their personal and professional lives.",
+    "category": "offline",
+    "pricing": "$210",
+    "counselor_name": "Olivia Turner",
+    "image": "https://i.ibb.co.com/Q63cpT7/Hh-Zm-CNS8-Qam-Dxyek-Rapr-Tips-for-Work-Life-Balance.webp",
+    "duration": "14-10-24 2-3pm",
+    "rating": 4.1
+  }
+]

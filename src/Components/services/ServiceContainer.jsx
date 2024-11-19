@@ -19,7 +19,7 @@ const ServiceContainer = () => {
   return (
     <>
       <div className="md:w-10/12 w-11/12 mx-auto my-20">
-        <div data-aos="fade-right" className="mb-10">
+        <div data-aos="fade-up" className="mb-10">
           <h1 className="font-Playfair lg:text-6xl md:text-5xl text-3xl py-5">
             <span className="text-blue-500">
               Our Team serving you <br />

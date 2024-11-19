@@ -5,6 +5,7 @@ import { FaGoogle } from "react-icons/fa";
 import { AllContext } from "../contextprovider/DataContext";
 import { FaRegEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import { toast, ToastContainer } from "react-toastify";
 const Register = () => {
   const { createUser, signInGoogle, updateUserProfile } = useContext(AllContext);
   const [errorMessage, setErrorMessage] = useState("");
@@ -38,18 +39,18 @@ const Register = () => {
     e.target.reset();
     createUser(email, password)
       .then((result) => {
-        alert("account created successfully");
+        toast.success("account created successfully");
         setSuccess(true);
         updateUserProfile({displayName:name, photoURL:photo})
         .then(()=>{
           navigate('/');
 
         }).catch(error=>{
-          alert(error.message);
+          toast.error(error.message);
         })
       })
       .catch((error) => {
-        console.log(error.message);
+        toast.error(error.message);
         setErrorMessage(error.message);
         setSuccess(false)
       });
@@ -58,11 +59,9 @@ const Register = () => {
   const handleGoogleLogin = () => {
     signInGoogle()
       .then((result) => {
-        console.log(result);
         navigate('/');
       })
       .catch((error) => {
-        console.log(error);
         setErrorMessage(error.message);
       });
   };
@@ -77,6 +76,7 @@ const Register = () => {
         >
           <div className="hero-overlay bg-gray-400 bg-opacity-20"></div>
           <div className="min-h-screen hero-content text-neutral-content text-center">
+            <ToastContainer></ToastContainer>
             <div className="font-Roboto mt-20 md:w-96  bg-white bg-opacity-70 shrink-0 shadow-2xl">
               <form onSubmit={handleRegister} className="card-body">
                 <h1 className="text-black text-3xl font-bold uppercase">
@@ -90,7 +90,7 @@ const Register = () => {
                     type="text"
                     name="name"
                     placeholder="name"
-                    className="input input-bordered bg-opacity-20"
+                    className="input input-bordered bg-opacity-20 text-black"
                     required
                   />
                 </div>

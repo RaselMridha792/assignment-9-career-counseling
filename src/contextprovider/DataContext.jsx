@@ -9,6 +9,8 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../Firebase.init";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const AllContext = createContext();
 const DataContext = ({ children }) => {
@@ -18,7 +20,7 @@ const DataContext = ({ children }) => {
 
   useEffect(() => {
     const loadData = async () => {
-      const response = await fetch("./service.json");
+      const response = await fetch("./services.json");
       const data = await response.json();
       setService(data);
     };
@@ -43,10 +45,8 @@ const DataContext = ({ children }) => {
   useEffect(() => {
     const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
-        console.log("successfully loggedIn", currentUser);
         setUser(currentUser);
       } else {
-        console.log("user not logged in");
         setUser(null);
       }
     });
@@ -56,13 +56,22 @@ const DataContext = ({ children }) => {
   }, []);
 
   //   handle sign out
-  const signOutUser = () =>{
-    return signOut(auth)
-  }
+  const signOutUser = () => {
+    return signOut(auth);
+  };
 
-  const updateUserProfile = (updatedData) =>{
+  // handle reset password
+  const [resetmail, setResetMail] = useState("");
+  const handleResetPassword = (email) => {
+    const resetEmail = email.current.value;
+    setResetMail(resetEmail);
+  };
+
+  // handle reset password
+
+  const updateUserProfile = (updatedData) => {
     return updateProfile(auth.currentUser, updatedData);
-  }
+  };
 
   const DataInfo = {
     service,
@@ -73,7 +82,9 @@ const DataContext = ({ children }) => {
     user,
     setUser,
     updateUserProfile,
-
+    handleResetPassword,
+    resetmail,
+    toast,
   };
 
   return <AllContext.Provider value={DataInfo}>{children}</AllContext.Provider>;
