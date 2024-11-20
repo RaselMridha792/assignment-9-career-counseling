@@ -8,7 +8,9 @@ import Dashboard from "../pages/Dashboard";
 import Errorpage from "../pages/Errorpage";
 import ForgetPassword from "../pages/ForgetPassword";
 import Details from "../pages/privet routes/Details";
-
+import PrivetRoutes from "../pages/privet routes/PrivetRoutes";
+import UserProfile from "../pages/privet routes/UserProfile";
+import PrivetProfile from "../pages/privet routes/PrivetProfile";
 
 const Routes = createBrowserRouter([
   {
@@ -29,21 +31,29 @@ const Routes = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: '/about',
-        element: <About></About>
+        path: "/about",
+        element: <About></About>,
       },
       {
-        path: '/dashboard',
-        element: <Dashboard></Dashboard>
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>,
       },
       {
-        path: '/forget',
-        element: <ForgetPassword></ForgetPassword>
+        path: "/forget",
+        element: <ForgetPassword></ForgetPassword>,
       },
       {
-        path: '/service/:id',
-        element : <Details></Details>,
-        loader:({params})=> fetch('./services.json')
+        path: "/service/:id",
+        element: (
+          <PrivetRoutes>
+            <Details></Details>
+          </PrivetRoutes>
+        ),
+        loader: ({ params }) => fetch("./services.json"),
+      },
+      {
+        path: '/profile',
+        element: <PrivetProfile><UserProfile></UserProfile></PrivetProfile>
       }
     ],
   },

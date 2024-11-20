@@ -9,35 +9,44 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../Firebase.init";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const AllContext = createContext();
 const DataContext = ({ children }) => {
-  const [service, setService] = useState();
+  const [service, setService] = useState([]);
   const [user, setUser] = useState(null);
   const googleProvider = new GoogleAuthProvider();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadData = async () => {
-      const response = await fetch("./services.json");
-      const data = await response.json();
-      setService(data);
+      try{
+        // const response = await fetch("./services.json");
+        const response = await fetch("../../../public/services.json");
+        const data = await response.json();
+        setService(data);
+        setLoading(true)
+      }catch(error){
+        console.log(error)
+      }
     };
     loadData();
   }, []);
 
   // sign up method implement
   const createUser = (email, password) => {
+    setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   // login method implement
   const loginUser = (email, password) => {
+    setLoading(true)
     return signInWithEmailAndPassword(auth, email, password);
   };
   // signIn with google implement
   const signInGoogle = () => {
+    setLoading(true)
     return signInWithPopup(auth, googleProvider);
   };
 
@@ -46,6 +55,7 @@ const DataContext = ({ children }) => {
     const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
+        setLoading(false);
       } else {
         setUser(null);
       }
@@ -93,8 +103,8 @@ const DataContext = ({ children }) => {
     updateUserProfile,
     handleResetPassword,
     resetmail,
-    toast,
     handleDetailsId,
+    loading,
     id,
   };
 

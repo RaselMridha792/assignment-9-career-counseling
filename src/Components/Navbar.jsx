@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { useContext } from "react";
 import { AllContext } from "../contextprovider/DataContext";
@@ -7,13 +7,16 @@ import { toast, ToastContainer } from "react-toastify";
 
 const Navbar = () => {
   const { signOutUser, user } = useContext(AllContext);
+  const navigate = useNavigate()
+  const handleNavigateProfile = ()=>{
+    navigate('/profile')
+  }
 
   const handleSignOut = (e) => {
     e.preventDefault();
     signOutUser()
       .then(() => {
-        toast.success("sign out successfull");
-        alert('signout successfully');
+        toast.success('signout successfully');
       })
       .catch((error) => {
         toast.error(error.message);
@@ -37,8 +40,8 @@ const Navbar = () => {
   );
   return (
     <>
-        <ToastContainer></ToastContainer>
       <div className="relative">
+        <ToastContainer></ToastContainer>
         <div className="navbar bg-base-100 font-Roboto md:w-10/12 w-11/12 mx-auto bg-transparent absolute z-index  absolute top-0 left-0 right-0 z-10 md:py-6">
           <div className="navbar-start">
             <div className="dropdown">
@@ -89,7 +92,7 @@ const Navbar = () => {
             <div className="bg-white rounded-full text-2xl relative group">
               {user && user?.email ? (
                 <>
-                  <div>
+                  <div onClick={handleNavigateProfile}>
                     <img className="w-10 rounded-full" src={user.photoURL} alt={user.displayName} />
                   </div>
                   <div className="absolute top-12 opacity-0 group-hover:opacity-100 duration-300">
@@ -103,7 +106,7 @@ const Navbar = () => {
             <div>
               {user ? (
                 <>
-                  <Link onClick={handleSignOut} className="btn btn-neutral">
+                  <Link to="/" onClick={handleSignOut} className="btn btn-neutral">
                     Log Out
                   </Link>
                 </>

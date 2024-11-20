@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
 import herobg from "../assets/hero-bg-2.jpg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEyeSlash, FaGoogle, FaRegEye } from "react-icons/fa";
 import { AllContext } from "../contextprovider/DataContext";
 import { toast, ToastContainer } from "react-toastify";
@@ -9,6 +9,8 @@ const Login = () => {
   const { loginUser, signInGoogle, handleResetPassword } = useContext(AllContext);
   const [errorMessage, setErrorMessage] = useState("");
   const emailRef = useRef();
+  const location = useLocation();
+  console.log(location);
 
   const [toogle, setToogle] = useState(true);
   const handleToogleEye = () => {
@@ -30,7 +32,7 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         toast.success('login successfull')
-        navigate("/");
+        navigate(location?.state ? location.state: '/');
       })
       .catch((error) => {
         toast.success(error.message);
@@ -41,7 +43,7 @@ const Login = () => {
   const handleLoginWithGoogle = () => {
     signInGoogle()
       .then((result) => {
-        navigate("/");
+        navigate(location?.state ? location.state: '/');
       })
       .catch((error) => {
         toast.error(error.message);
@@ -49,7 +51,7 @@ const Login = () => {
   };
 
   const handleResetPass = () =>{
-    if(emailRef.length<2){
+    if(emailRef){
       handleResetPassword(emailRef)
       navigate('/forget');
     }

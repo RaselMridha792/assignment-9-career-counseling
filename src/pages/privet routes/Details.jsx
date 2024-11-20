@@ -1,13 +1,22 @@
-import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import { AllContext } from "../../contextprovider/DataContext";
 import servicebg from "../../assets/servicebg.jpg";
 import { FaServicestack } from "react-icons/fa6";
+import { AiFillLike } from "react-icons/ai";
+import { useParams } from "react-router-dom";
 
 const Details = () => {
-  const data = useLoaderData();
-  const { id } = useContext(AllContext);
-  const service = data.filter((singleData) => singleData.service_Id == id);
+  const { user, service } = useContext(AllContext);
+  const {id} = useParams();
+  const [selectedService, setSelectedService] = useState({});
+  useEffect(() => {
+    if(service){
+      const SingleService = service.find(
+        (singleData) => singleData.service_Id == id
+      );
+      setSelectedService(SingleService || {});
+    }
+  }, [service, id]);
   const {
     service_name,
     description,
@@ -17,7 +26,17 @@ const Details = () => {
     image,
     duration,
     rating,
-  } = service[0];
+  } = selectedService;
+
+  const [userFeedback, setUserFeedback] = useState([]);
+  const handleComments = (e) => {
+    e.preventDefault();
+    const comment = e.target.comment.value;
+    e.target.reset();
+    if (comment) {
+      setUserFeedback((previousFeedback) => [...previousFeedback, comment]);
+    }
+  };
   return (
     <>
       <section className="font-Roboto">
@@ -52,45 +71,96 @@ const Details = () => {
           </div>
         </div>
         <div className="mt-20 max-w-screen-2xl mx-auto">
-          <div className="w-2/4 border p-5 my-10">
-            <img className="h-96 object-cover w-full border p-2" src={image} alt="" />
-            <h1 className="text-2xl font-bold pb-5">Service: {service_name}</h1>
-            <p>Counselor: {counselor_name}</p>
-            <p>duration: {duration}</p>
-            <p>price: {pricing}</p>
-            <p>rating: {rating}</p>
-            <div className="rating">
-              <input
-                type="radio"
-                name="rating-2"
-                className="mask mask-star-2 bg-orange-400"
+          <div className="grid md:grid-cols-2 grid-cols-2 gap-5  my-10">
+            <div className="border p-5">
+              <img
+                className="h-96 object-cover w-full border p-2"
+                src={image}
+                alt=""
               />
-              <input
-                type="radio"
-                name="rating-2"
-                className="mask mask-star-2 bg-orange-400"
-                defaultChecked
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                className="mask mask-star-2 bg-orange-400"
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                className="mask mask-star-2 bg-orange-400"
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                className="mask mask-star-2 bg-orange-400"
-              />
+              <h1 className="text-2xl font-bold pb-5">
+                Service: {service_name}
+              </h1>
+              <p>Counselor: {counselor_name}</p>
+              <p>duration: {duration}</p>
+              <p>price: {pricing}</p>
+              <p>rating: {rating}</p>
+              <p className="text-gray-500 text-lg">
+                <span className="font-bold">Service Details: </span>
+                {description}
+              </p>
             </div>
-            <p className="text-gray-500 text-lg">
-              <span className="font-bold">Service Details: </span>
-              {description}
-            </p>
+            <div>
+              <h1 className="text-3xl font-bold font-Playfair">
+                Leave a FeedBack
+              </h1>
+              <hr className="my-5" />
+              <p>comment</p>
+              <form onSubmit={handleComments} action="submit">
+                <textarea
+                  type="text"
+                  name="comment"
+                  className="textarea textarea-primary w-full h-64 mt-2 text-lg"
+                  placeholder="write you feedback here"
+                ></textarea>
+                <div className="py-5">
+                  <span className="text-xl font-bold">rate us:</span>
+                  <div className="rating">
+                    <input
+                      type="radio"
+                      name="rating-2"
+                      className="mask mask-star-2 bg-orange-400"
+                    />
+                    <input
+                      type="radio"
+                      name="rating-2"
+                      className="mask mask-star-2 bg-orange-400"
+                      defaultChecked
+                    />
+                    <input
+                      type="radio"
+                      name="rating-2"
+                      className="mask mask-star-2 bg-orange-400"
+                    />
+                    <input
+                      type="radio"
+                      name="rating-2"
+                      className="mask mask-star-2 bg-orange-400"
+                    />
+                    <input
+                      type="radio"
+                      name="rating-2"
+                      className="mask mask-star-2 bg-orange-400"
+                    />
+                  </div>
+                </div>
+                <button className="btn btn-neutral w-1/4">Post Comment</button>
+              </form>
+            </div>
+          </div>
+          <h1 className="text-xl">Comments</h1>
+          <hr className="mb-20" />
+          <div className="my-10">
+            {userFeedback &&
+              userFeedback.map((feedback) => (
+                <div className="border shadow-lg p-5 my-5 w-2/4 rounded-lg">
+                  <div className="flex justify-between">
+                    <div className="flex items-center mb-5 gap-2">
+                      <img
+                        className="w-10 rounded-full"
+                        src={user.photoURL}
+                        alt=""
+                      />
+                      <h1 className="font-bold">@{user.displayName}</h1>
+                      <p>1 min</p>
+                    </div>
+                    <h1 className="text-2xl text-blue-600">
+                      <AiFillLike />
+                    </h1>
+                  </div>
+                  {feedback}
+                </div>
+              ))}
           </div>
         </div>
       </section>

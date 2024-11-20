@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import forgetbg from "../assets/forget.jpg";
 import { AllContext } from "../contextprovider/DataContext";
 import { sendPasswordResetEmail } from "firebase/auth";
@@ -7,11 +7,12 @@ import { toast } from "react-toastify";
 
 const ForgetPassword = () => {
     const {resetmail} = useContext(AllContext);
+    const [email, setEmail] = useState(resetmail || "")
     console.log(resetmail);
 
     const handleReset = (e) =>{
         e.preventDefault();
-        const email = resetmail;
+        // const email = resetmail;
         if(email){
             sendPasswordResetEmail(auth, email)
             .then(()=>{
@@ -43,8 +44,9 @@ const ForgetPassword = () => {
                   </label>
                   <input
                     type="email"
-                    value={resetmail}
-                    placeholder={resetmail}
+                    value={email}
+                    placeholder={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="input input-bordered text-black"
                     required
                   />

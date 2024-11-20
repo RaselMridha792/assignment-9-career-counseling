@@ -10,12 +10,19 @@ const ServiceContainer = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      easing: 'ease-in-out'
+      easing: "ease-in-out",
     });
     AOS.refresh();
   }, []);
 
-  const { service } = useContext(AllContext);
+  const { service, loading } = useContext(AllContext);
+  if (loading) {
+    return (
+      <div className=" min-h-screen flex items-center justify-center">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
   return (
     <>
       <div className="md:w-10/12 w-11/12 mx-auto my-20">
