@@ -73,6 +73,15 @@ const DataContext = ({ children }) => {
     return updateProfile(auth.currentUser, updatedData);
   };
 
+  const [id, setId] = useState(null);
+  const handleDetailsId = (id) =>{
+    if(id){
+      setId(id);
+    }else{
+      setId(null);
+    }
+  }
+
   const DataInfo = {
     service,
     createUser,
@@ -85,6 +94,8 @@ const DataContext = ({ children }) => {
     handleResetPassword,
     resetmail,
     toast,
+    handleDetailsId,
+    id,
   };
 
   return <AllContext.Provider value={DataInfo}>{children}</AllContext.Provider>;

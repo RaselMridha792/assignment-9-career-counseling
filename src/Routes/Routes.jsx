@@ -7,6 +7,7 @@ import About from "../pages/About";
 import Dashboard from "../pages/Dashboard";
 import Errorpage from "../pages/Errorpage";
 import ForgetPassword from "../pages/ForgetPassword";
+import Details from "../pages/privet routes/Details";
 
 
 const Routes = createBrowserRouter([
@@ -38,6 +39,11 @@ const Routes = createBrowserRouter([
       {
         path: '/forget',
         element: <ForgetPassword></ForgetPassword>
+      },
+      {
+        path: '/service/:id',
+        element : <Details></Details>,
+        loader:({params})=> fetch('./services.json')
       }
     ],
   },

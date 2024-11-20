@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AllContext } from "../../contextprovider/DataContext";
 
 const ServiceCard = ({ singleService }) => {
+  const {handleDetailsId} = useContext(AllContext);
   const {
     image,
     counselor_name,
@@ -11,7 +14,9 @@ const ServiceCard = ({ singleService }) => {
     service_name,
     rating
   } = singleService;
-  console.log(image)
+
+
+
   return (
     <>
       <div data-aos="fade-up" className="card bg-base-100 border rounded-none font-Roboto hover:shadow-2xl duration-300 ease-out ease-in hover:border-blue-500">
@@ -30,7 +35,7 @@ const ServiceCard = ({ singleService }) => {
           </div>
           <hr />
           <p>{description.slice(0, 200)}...</p>
-          <Link to="/details" className="btn btn-neutral">Learn more</Link>
+          <Link onClick={()=>handleDetailsId(service_Id)} to={`service/${service_Id}`} className="btn btn-neutral">Read more</Link>
         </div>
       </div>
     </>
