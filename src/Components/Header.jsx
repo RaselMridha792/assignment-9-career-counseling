@@ -33,15 +33,15 @@ const Header = () => {
                 <div className="uppercase flex flex-col md:flex-row items-center gap-5">
                   <Link
                     className="btn w-full md:w-1/4 rounded-full bg-blue-600 text-white border-none"
-                    to="/"
+                    to="/about"
                   >
                     Learn More
                   </Link>
                   <Link
                     className="btn w-full md:w-1/4 rounded-full bg-gray-700 text-white border-none"
-                    to="/"
+                    to="/shop"
                   >
-                    Our Program
+                    Books
                   </Link>
                 </div>
               </div>
@@ -80,15 +80,15 @@ const Header = () => {
                 <div className="uppercase flex flex-col md:flex-row items-center gap-5">
                   <Link
                     className="btn w-full md:w-1/4 rounded-full bg-blue-600 text-white border-none"
-                    to="/"
+                    to="/about"
                   >
                     Learn More
                   </Link>
                   <Link
                     className="btn w-full md:w-1/4 rounded-full bg-gray-700 text-white border-none"
-                    to="/"
+                    to="/shop"
                   >
-                    Our Program
+                    Books
                   </Link>
                 </div>
               </div>
@@ -128,15 +128,15 @@ const Header = () => {
                 <div className="uppercase flex items-center gap-5 flex-col md:flex-row">
                   <Link
                     className="btn rounded-full w-full md:w-1/4 bg-blue-600 text-white border-none"
-                    to="/"
+                    to="/About"
                   >
                     Learn More
                   </Link>
                   <Link
                     className="btn rounded-full w-full md:w-1/4 bg-gray-700 text-white border-none"
-                    to="/"
+                    to="/shop"
                   >
-                    Our Program
+                    Books
                   </Link>
                 </div>
               </div>
