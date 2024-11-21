@@ -46,12 +46,12 @@ Welcome to **Career Compass Website**, a platform designed to guide users on the
 - **Footer**: 
   - Contains relevant information and links to contact, terms of service, privacy policy, and other useful sections.
 
-## Services Section
+## Header Section
 
 - **Slider**: 
-  - A carousel (Swiper or DaisyUI) with at least 3 slides showcasing the various career counseling services.
+  - A carousel (DaisyUI) with at least 3 slides showcasing the various career counseling services.
   
-- **Service Cards**: 
+## Service Cards 
   - Displays the services in a card layout with key information (service name, pricing, counselor, etc.). Each card contains a "Learn More" button that redirects users to the Service Details page.
 
 ## Service Details Page
