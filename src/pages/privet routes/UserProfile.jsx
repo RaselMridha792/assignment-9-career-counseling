@@ -95,7 +95,7 @@ const UserProfile = () => {
                   className="input input-bordered w-full max-w-xs"
                 />
               </label>
-              <button className="btn btn-neutral mt-5 w-1/6">Update Now</button>
+              <button className="btn btn-neutral mt-5 lg:w-1/6">Update Now</button>
             </form>
           </div>
         </div>

@@ -57,7 +57,7 @@ const About = () => {
           </div>
           <div
             data-aos="fade-down"
-            className="md:mb-20 mx-auto gap-10 w-10/12 my-10 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 text-center"
+            className="md:mb-20 mx-auto gap-10 w-10/12 my-10 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 text-center"
           >
             <div className="flex flex-col items-center justify-center">
               <img
