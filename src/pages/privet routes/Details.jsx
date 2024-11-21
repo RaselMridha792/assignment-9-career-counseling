@@ -85,8 +85,8 @@ const Details = () => {
             </div>
           </div>
         </div>
-        <div className="mt-20 max-w-screen-2xl mx-auto">
-          <div className="grid md:grid-cols-2 grid-cols-2 gap-5  my-10">
+        <div className="mt-20 max-w-screen-2xl mx-auto px-2">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-5  my-10">
             <div className="border p-5">
               <img
                 className="h-96 object-cover w-full border p-2"

@@ -2,7 +2,6 @@ import { useContext } from "react";
 import herobg from "../../assets/hero-bg-2.jpg";
 import { AllContext } from "../../contextprovider/DataContext";
 import { toast, ToastContainer } from "react-toastify";
-import { auth } from "../../Firebase.init";
 import { Helmet } from "react-helmet-async";
 const UserProfile = () => {
   const { user, updateUserProfile, setUser, loading } = useContext(AllContext);
