@@ -8,7 +8,6 @@ import { toast } from "react-toastify";
 const ForgetPassword = () => {
     const {resetmail} = useContext(AllContext);
     const [email, setEmail] = useState(resetmail || "")
-    console.log(resetmail);
 
     const handleReset = (e) =>{
         e.preventDefault();

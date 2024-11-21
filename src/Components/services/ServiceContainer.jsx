@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AllContext } from "../../contextprovider/DataContext";
 import ServiceCard from "./ServiceCard";
 import Review from "../Review";
@@ -7,6 +7,21 @@ import Review from "../Review";
 import AOS from "aos";
 import "aos/dist/aos.css";
 const ServiceContainer = () => {
+  const [service, setService] = useState();
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const response = await fetch("/services.json");
+        const data = await response.json();
+        setService(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    loadData();
+  }, []);
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -14,15 +29,6 @@ const ServiceContainer = () => {
     });
     AOS.refresh();
   }, []);
-
-  const { service, loading } = useContext(AllContext);
-  if (loading) {
-    return (
-      <div className=" min-h-screen flex items-center justify-center">
-        <span className="loading loading-spinner loading-lg"></span>
-      </div>
-    );
-  }
   return (
     <>
       <div className="md:w-10/12 w-11/12 mx-auto my-20">

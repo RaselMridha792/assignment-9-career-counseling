@@ -28,13 +28,10 @@ const Navbar = () => {
         Home
       </NavLink>
       <NavLink className="btn btn-outline" to="/about">
-        About
+        About Us
       </NavLink>
-      <NavLink className="btn btn-outline" to="/coaching">
-        Coaching
-      </NavLink>
-      <NavLink className="btn btn-outline active:bg-neutral" to="/dashboard">
-        Dashboard
+      <NavLink className="btn btn-outline active:bg-neutral" to="/shop">
+        Shop Now
       </NavLink>
     </>
   );

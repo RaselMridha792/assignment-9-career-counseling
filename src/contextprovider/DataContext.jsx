@@ -13,40 +13,24 @@ import "react-toastify/dist/ReactToastify.css";
 
 export const AllContext = createContext();
 const DataContext = ({ children }) => {
-  const [service, setService] = useState([]);
   const [user, setUser] = useState(null);
   const googleProvider = new GoogleAuthProvider();
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const loadData = async () => {
-      try{
-        // const response = await fetch("./services.json");
-        const response = await fetch("../../../public/services.json");
-        const data = await response.json();
-        setService(data);
-        setLoading(true)
-      }catch(error){
-        console.log(error)
-      }
-    };
-    loadData();
-  }, []);
-
   // sign up method implement
   const createUser = (email, password) => {
-    setLoading(true)
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   // login method implement
   const loginUser = (email, password) => {
-    setLoading(true)
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
   // signIn with google implement
   const signInGoogle = () => {
-    setLoading(true)
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
 
@@ -55,10 +39,10 @@ const DataContext = ({ children }) => {
     const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
-        setLoading(false);
       } else {
         setUser(null);
       }
+      setLoading(false);
     });
     return () => {
       unsubcribe();
@@ -84,16 +68,15 @@ const DataContext = ({ children }) => {
   };
 
   const [id, setId] = useState(null);
-  const handleDetailsId = (id) =>{
-    if(id){
+  const handleDetailsId = (id) => {
+    if (id) {
       setId(id);
-    }else{
+    } else {
       setId(null);
     }
-  }
+  };
 
   const DataInfo = {
-    service,
     createUser,
     loginUser,
     signInGoogle,
@@ -106,6 +89,7 @@ const DataContext = ({ children }) => {
     handleDetailsId,
     loading,
     id,
+    setLoading,
   };
 
   return <AllContext.Provider value={DataInfo}>{children}</AllContext.Provider>;

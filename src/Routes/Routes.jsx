@@ -4,13 +4,15 @@ import Homepage from "../pages/Homepage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import About from "../pages/About";
-import Dashboard from "../pages/Dashboard";
 import Errorpage from "../pages/Errorpage";
 import ForgetPassword from "../pages/ForgetPassword";
 import Details from "../pages/privet routes/Details";
 import PrivetRoutes from "../pages/privet routes/PrivetRoutes";
 import UserProfile from "../pages/privet routes/UserProfile";
 import PrivetProfile from "../pages/privet routes/PrivetProfile";
+import Book from "../pages/Book";
+import SingleBookData from "../pages/SingleBookData";
+import PrivetBookDetails from "../pages/privet routes/PrivetBookDetails";
 
 const Routes = createBrowserRouter([
   {
@@ -35,8 +37,8 @@ const Routes = createBrowserRouter([
         element: <About></About>,
       },
       {
-        path: "/dashboard",
-        element: <Dashboard></Dashboard>,
+        path: "/shop",
+        element: <Book></Book>,
       },
       {
         path: "/forget",
@@ -52,9 +54,22 @@ const Routes = createBrowserRouter([
         loader: ({ params }) => fetch("./services.json"),
       },
       {
-        path: '/profile',
-        element: <PrivetProfile><UserProfile></UserProfile></PrivetProfile>
-      }
+        path: "/profile",
+        element: (
+          <PrivetProfile>
+            <UserProfile></UserProfile>
+          </PrivetProfile>
+        ),
+      },
+      {
+        path: "/bookDetails/:id",
+        element: (
+          <PrivetBookDetails>
+            <SingleBookData></SingleBookData>
+          </PrivetBookDetails>
+        ),
+        loader: ({ params }) => fetch("/book.json"),
+      },
     ],
   },
 ]);

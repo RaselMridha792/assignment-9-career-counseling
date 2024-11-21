@@ -3,6 +3,7 @@ import herobg from "../../assets/hero-bg-2.jpg";
 import { AllContext } from "../../contextprovider/DataContext";
 import { toast, ToastContainer } from "react-toastify";
 import { auth } from "../../Firebase.init";
+import { Helmet } from "react-helmet-async";
 const UserProfile = () => {
   const { user, updateUserProfile, setUser, loading } = useContext(AllContext);
   const handleUpdateProfile = (e) => {
@@ -20,8 +21,7 @@ const UserProfile = () => {
           toast.success("profile updated successfully");
         })
         .catch((error) => {
-          console.log(error.message);
-          toast.error("profile update failed");
+          toast.error("profile update failed", error);
         });
     }
   };
@@ -34,7 +34,10 @@ const UserProfile = () => {
   }
   return (
     <>
-        <ToastContainer></ToastContainer>
+      <Helmet>
+        <title>Profile | Career Compass</title>
+      </Helmet>
+      <ToastContainer></ToastContainer>
       <div
         className="hero min-h-fit"
         style={{
@@ -43,7 +46,9 @@ const UserProfile = () => {
       >
         <div className="hero-overlay bg-opacity-20 bg-gray-200"></div>
         <div className="hero-content text-neutral-content text-center">
-          <div className="max-w-md my-40"></div>
+          <div className="w-full my-40 text-white font-Roboto font-bold text-4xl">
+            Hey {user.displayName}, Welcome to the dashboard
+          </div>
         </div>
       </div>
       <div className="min-h-screen w-10/12 mx-auto font-Roboto">

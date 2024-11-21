@@ -1,12 +1,17 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import { RouterProvider } from 'react-router-dom'
-import Routes from './Routes/Routes'
-import DataContext from './contextprovider/DataContext'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import { RouterProvider } from "react-router-dom";
+import Routes from "./Routes/Routes";
+import DataContext from "./contextprovider/DataContext";
+import { HelmetProvider } from "react-helmet-async";
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <DataContext><RouterProvider router={Routes}></RouterProvider></DataContext>
-  </StrictMode>,
-)
+    <HelmetProvider>
+      <DataContext>
+        <RouterProvider router={Routes}></RouterProvider>
+      </DataContext>
+    </HelmetProvider>
+  </StrictMode>
+);

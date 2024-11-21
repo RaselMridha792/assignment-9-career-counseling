@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "What Color is Your Parachute?",
+    "description": "A practical manual for job-seekers and career changers, filled with exercises and tools for self-discovery.",
+    "category": "Career Guidance",
+    "price": 15.99,
+    "image": "https://i.ibb.co.com/rwYYLjn/career1.jpg",
+    "readMore": "What Color is Your Parachute is a classic career guide that helps job seekers and career changers identify their passions and align them with meaningful work. Richard N. Bolles offers practical exercises and self-reflection tools to assess skills, interests, and values. The book encourages a proactive approach to career planning, focusing on self-discovery rather than just applying for jobs. Key strategies include networking, navigating the hidden job market, and continuously updating skills to stay competitive. It also covers resume-building, interviewing, and salary negotiation. Updated regularly, the book provides timeless advice on personal growth and adapting to the evolving job market, making it a valuable resource for anyone looking to navigate their career path."
+  },
+  {
+    "id": 2,
+    "title": "Designing Your Life",
+    "description": "Learn to build a well-lived, joyful life with a design thinking approach.",
+    "category": "Career Development",
+    "price": 18.5,
+    "image": "https://i.ibb.co.com/XZ6prXh/career2.jpg",
+    "readMore":"Designing Your Life uses design-thinking principles to help readers create a fulfilling life. Bill Burnett and Dave Evans encourage readers to explore multiple career and life paths through experimentation and iteration. The book provides actionable steps to design both personal and professional lives, offering tools to overcome obstacles like fear and perfectionism. Readers learn to reframe problems and make decisions through prototyping new ideas. With practical exercises and a focus on flexibility, Designing Your Life helps individuals create balance and clarity by aligning their values, goals, and dreams. It’s an accessible and practical guide for building the life you want."
+  },
+  {
+    "id": 3,
+    "title": "StrengthsFinder 2.0",
+    "description": "Identify your top strengths and unlock your potential with actionable advice.",
+    "category": "Self-Improvement",
+    "price": 22.0,
+    "image": "https://i.ibb.co.com/F5HMDNT/career3.jpg",
+    "readMore":"StrengthsFinder 20 helps readers identify their top strengths using an online assessment and offers strategies for applying these talents in both career and personal life. Tom Rath emphasizes the importance of focusing on strengths rather than weaknesses to achieve success and fulfillment. The book includes insights on how to build effective teams, foster strong relationships, and achieve greater performance by developing natural abilities. It provides practical advice for aligning your strengths with career goals and professional growth. With its evidence-based approach, StrengthsFinder 2.0 is an essential tool for self-improvement and discovering one’s potential."
+  },
+  {
+    "id": 4,
+    "title": "The 2-Hour Job Search",
+    "description": "A streamlined approach to finding a job by prioritizing your efforts effectively.",
+    "category": "Job Search",
+    "price": 12.75,
+    "image": "https://i.ibb.co.com/Q9KF9nB/career4.jpg",
+    "readMore":"The 2-Hour Job Search is an efficient guide to job hunting that helps job seekers land interviews quickly. Steve Dalton presents a systematic approach focused on prioritizing high-impact leads, effective outreach, and leveraging LinkedIn. The book introduces a three-step method: creating a list of target companies, utilizing networking to get introductions, and optimizing applications. Dalton’s streamlined approach saves time and increases productivity, allowing job seekers to focus their efforts on the most promising opportunities. With practical tools, templates, and strategies, this book is perfect for those looking for a more effective and organized way to find a job"
+  },
+  {
+    "id": 5,
+    "title": "Pivot",
+    "description": "Practical strategies to navigate career transitions with clarity and confidence.",
+    "category": "Career Transition",
+    "price": 17.99,
+    "image": "https://i.ibb.co.com/Q9wqsFq/career5.jpg",
+    "readMore":"Pivot offers practical strategies for navigating career transitions confidently. Jenny Blake introduces a four-step framework for assessing current skills, designing new career opportunities, testing ideas through experimentation, and ultimately making a successful pivot. The book emphasizes the importance of self-awareness, resilience, and adaptability when exploring new career paths. Blake encourages readers to embrace change and take small, low-risk steps to discover new opportunities. By focusing on strengths, networking, and testing new directions, Pivot offers a roadmap for making bold moves in your professional life. This book is ideal for anyone facing a career shift or seeking greater fulfillment"
+  },
+  {
+    "id": 6,
+    "title": "So Good They Can't Ignore You",
+    "description": "Learn why skills trump passion in the quest for work you love.",
+    "category": "Career Strategy",
+    "price": 14.99,
+    "image": "https://i.ibb.co.com/0ymdqnx/career6.jpg",
+    "readMore":"So Good They Cant Ignore You challenges the popular advice to follow your passion, proposing instead that mastering rare and valuable skills is the true key to career satisfaction. Cal Newport argues that developing expertise leads to meaningful work and greater opportunities. Through research and examples of successful individuals, Newport shows that passion is often the result of becoming skilled in a craft. The book encourages readers to adopt a craftsman mindset,focusing on continuous improvement and long-term growth. Newport also introduces the concept of career capital, which helps professionals create new opportunities through skill mastery"
+  },
+  {
+    "id": 7,
+    "title": "Deep Work",
+    "description": "Master the ability to focus intensely in a distracted world for career success.",
+    "category": "Productivity",
+    "price": 16.5,
+    "image": "https://i.ibb.co.com/xJQZf7G/product-01.jpg",
+    "readMore":"Deep Work explores the importance of focused, uninterrupted work in achieving high levels of productivity and success. Cal Newport presents deep work as a valuable skill that enables individuals to produce high-quality results in a distracted world. The book offers practical strategies for minimizing distractions, enhancing concentration, and creating an environment conducive to focused work. Newport emphasizes time management, prioritization, and scheduling deep work sessions to accomplish cognitively demanding tasks. He also explores the benefits of deep work, such as creativity and innovation, arguing that it is crucial for achieving professional excellence and personal fulfillment in todays fast-paced world."
+  },
+  {
+    "id": 8,
+    "title": "Lean In",
+    "description": "Empowering advice for women navigating the workplace and building a career.",
+    "category": "Women's Career",
+    "price": 19.99,
+    "image": "https://i.ibb.co.com/y8wYTQf/product-02.jpg",
+    "readMore":"Lean In by Sheryl Sandberg is an empowering guide for women looking to succeed in the workplace. Sandberg draws from her experiences to address the unique challenges women face in their careers, including gender biases, lack of confidence, and societal expectations. The book provides practical advice on overcoming these barriers, building confidence, seeking mentorship, and embracing leadership opportunities. Sandberg encourages women to lean in to their careers, take risks, and speak up. She also discusses the importance of work-life balance and offers insights on managing both personal and professional responsibilities. Lean In is an essential read for women aiming for leadership and career advancement."
+  },
+  {
+    "id": 9,
+    "title": "Grit",
+    "description": "Learn the power of passion and perseverance for achieving long-term career goals.",
+    "category": "Motivation",
+    "price": 20.0,
+    "image": "https://i.ibb.co.com/f02P4dx/product-04.jpg",
+    "readMore":"Grit by Angela Duckworth explores the science behind passion and perseverance in achieving long-term goals. Duckworth argues that grit—combining sustained effort and determination—is more important than talent for success. Through research and compelling stories, she demonstrates that individuals who persevere through challenges are more likely to achieve their aspirations. The book offers strategies for cultivating grit, including developing a long-term vision, maintaining resilience, and committing to continuous learning. Duckworth emphasizes that grit can be developed and is essential for overcoming obstacles in both personal and professional life. This motivational guide inspires readers to stay focused and pursue their goals with perseverance."
+  },
+  {
+    "id": 10,
+    "title": "Dare to Lead",
+    "description": "A guide to courageous leadership and thriving in professional environments.",
+    "category": "Leadership",
+    "price": 21.5,
+    "image": "https://i.ibb.co.com/bL5zpD4/product-06.jpg",
+    "readMore" : "Dare to Lead by Brené Brown focuses on the power of courage, vulnerability, and authenticity in leadership. Drawing on years of research and real-world examples, Brown explores how effective leadership stems from the ability to build trust, foster connections, and lead with empathy. The book emphasizes that vulnerability, often seen as a weakness, is actually a source of strength that enables leaders to build meaningful relationships, encourage innovation, and create high-performing teams. Brown introduces key concepts like rumbling with vulnerability, which involves having difficult conversations, and living into our values, encouraging leaders to align actions with core beliefs. Through practical tools and strategies, the book offers actionable advice on cultivating courage, resilience, and empathy in the workplace. Brown also discusses the importance of creating a culture of inclusivity, where leaders inspire and empower their teams to take risks, share ideas, and embrace failure as part of the learning process. Dare to Lead is a must-read for anyone in a leadership role or aspiring to be a leader, as it provides the foundation for creating a compassionate and high-impact leadership style. It challenges conventional ideas about leadership and offers a fresh, human-centered approach to guiding teams and organizations"
+  }
+]

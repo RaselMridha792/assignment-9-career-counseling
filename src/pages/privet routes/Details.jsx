@@ -4,19 +4,31 @@ import servicebg from "../../assets/servicebg.jpg";
 import { FaServicestack } from "react-icons/fa6";
 import { AiFillLike } from "react-icons/ai";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Details = () => {
-  const { user, service } = useContext(AllContext);
-  const {id} = useParams();
+  const { user } = useContext(AllContext);
+  const { id } = useParams();
   const [selectedService, setSelectedService] = useState({});
+
+  const [serviceData, setServiceData] = useState([]);
   useEffect(() => {
-    if(service){
-      const SingleService = service.find(
+    const loadData = async () => {
+      const response = await fetch("/services.json");
+      const data = await response.json();
+      setServiceData(data);
+    };
+    loadData();
+  }, []);
+
+  useEffect(() => {
+    if (serviceData) {
+      const SingleService = serviceData.find(
         (singleData) => singleData.service_Id == id
       );
       setSelectedService(SingleService || {});
     }
-  }, [service, id]);
+  }, [serviceData, id]);
   const {
     service_name,
     description,
@@ -40,6 +52,9 @@ const Details = () => {
   return (
     <>
       <section className="font-Roboto">
+        <Helmet>
+          <title>Service | Career Compass</title>
+        </Helmet>
         <div
           className="hero min-h-fit"
           style={{

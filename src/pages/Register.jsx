@@ -6,60 +6,64 @@ import { AllContext } from "../contextprovider/DataContext";
 import { FaRegEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 const Register = () => {
-  const { createUser, signInGoogle, updateUserProfile } = useContext(AllContext);
+  const { createUser, signInGoogle, updateUserProfile } =
+    useContext(AllContext);
   const [errorMessage, setErrorMessage] = useState("");
   const [success, setSuccess] = useState(false);
   const [toogle, setToogle] = useState(true);
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-  
+
   const navigate = useNavigate();
 
-  const handleToogleEye = () =>{
+  const handleToogleEye = () => {
     setToogle(!toogle);
-  }
+  };
 
   const handleRegister = (e) => {
-    setErrorMessage('');
+    setErrorMessage("");
     setSuccess(false);
     e.preventDefault();
     const name = e.target.name.value;
     const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    
-    if(password.length < 6){
-        setErrorMessage('password should be at least 6 caracters or longer');
-        return;
-    };
-    if(!passwordRegex.test(password)){
-        setErrorMessage('password should be at least one Uppercase One LowerCase and Must be 6 caracter or longer');
-        return;
+
+    if (password.length < 6) {
+      setErrorMessage("password should be at least 6 caracters or longer");
+      return;
+    }
+    if (!passwordRegex.test(password)) {
+      setErrorMessage(
+        "password should be at least one Uppercase One LowerCase and Must be 6 caracter or longer"
+      );
+      return;
     }
     e.target.reset();
     createUser(email, password)
       .then((result) => {
         toast.success("account created successfully");
         setSuccess(true);
-        updateUserProfile({displayName:name, photoURL:photo})
-        .then(()=>{
-          navigate('/');
-
-        }).catch(error=>{
-          toast.error(error.message);
-        })
+        updateUserProfile({ displayName: name, photoURL: photo })
+          .then(() => {
+            navigate("/");
+          })
+          .catch((error) => {
+            toast.error(error.message);
+          });
       })
       .catch((error) => {
         toast.error(error.message);
         setErrorMessage(error.message);
-        setSuccess(false)
+        setSuccess(false);
       });
   };
 
   const handleGoogleLogin = () => {
     signInGoogle()
       .then((result) => {
-        navigate('/');
+        navigate("/");
       })
       .catch((error) => {
         setErrorMessage(error.message);
@@ -68,6 +72,9 @@ const Register = () => {
   return (
     <>
       <div>
+        <Helmet>
+          <title>Register | Career Compass</title>
+        </Helmet>
         <div
           className="hero min-h-screen"
           style={{
@@ -124,14 +131,17 @@ const Register = () => {
                   </label>
                   <input
                     // type="password"
-                    type={toogle?"password":"text"}
+                    type={toogle ? "password" : "text"}
                     name="password"
                     placeholder="password"
                     className="input input-bordered text-black bg-opacity-20"
                     required
                   />
-                  <div onClick={handleToogleEye} className="text-black absolute top-[52px] right-6">
-                    {toogle?<FaRegEye />:<FaEyeSlash />}
+                  <div
+                    onClick={handleToogleEye}
+                    className="text-black absolute top-[52px] right-6"
+                  >
+                    {toogle ? <FaRegEye /> : <FaEyeSlash />}
                   </div>
                 </div>
                 <div className="form-control mt-6 space-y-5">
@@ -152,13 +162,13 @@ const Register = () => {
               </form>
               <div>
                 {errorMessage && (
-                  <p className="text-red-500 pb-5">
-                    {errorMessage}
-                  </p>
+                  <p className="text-red-500 pb-5">{errorMessage}</p>
                 )}
               </div>
               <div>
-                {success && <p className="text-green-500">successfully account created</p>}
+                {success && (
+                  <p className="text-green-500">successfully account created</p>
+                )}
               </div>
             </div>
           </div>

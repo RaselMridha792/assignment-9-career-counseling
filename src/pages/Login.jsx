@@ -4,13 +4,14 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEyeSlash, FaGoogle, FaRegEye } from "react-icons/fa";
 import { AllContext } from "../contextprovider/DataContext";
 import { toast, ToastContainer } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
-  const { loginUser, signInGoogle, handleResetPassword } = useContext(AllContext);
+  const { loginUser, signInGoogle, handleResetPassword } =
+    useContext(AllContext);
   const [errorMessage, setErrorMessage] = useState("");
   const emailRef = useRef();
   const location = useLocation();
-  console.log(location);
 
   const [toogle, setToogle] = useState(true);
   const handleToogleEye = () => {
@@ -31,8 +32,8 @@ const Login = () => {
     e.target.reset();
     loginUser(email, password)
       .then((result) => {
-        toast.success('login successfull')
-        navigate(location?.state ? location.state: '/');
+        toast.success("login successfull");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         toast.success(error.message);
@@ -43,25 +44,26 @@ const Login = () => {
   const handleLoginWithGoogle = () => {
     signInGoogle()
       .then((result) => {
-        navigate(location?.state ? location.state: '/');
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         toast.error(error.message);
       });
   };
 
-  const handleResetPass = () =>{
-    if(emailRef){
-      handleResetPassword(emailRef)
-      navigate('/forget');
+  const handleResetPass = () => {
+    if (emailRef) {
+      handleResetPassword(emailRef);
+      navigate("/forget");
+    } else {
+      toast.error("please enter your email first");
     }
-    else{
-      toast.error('please enter your email first')
-      
-    }
-  }
+  };
   return (
     <div>
+      <Helmet>
+        <title>Login | Career Compass</title>
+      </Helmet>
       <div
         className="hero min-h-screen"
         style={{
@@ -94,7 +96,7 @@ const Login = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input
-                  type={toogle?"password":"text"}
+                  type={toogle ? "password" : "text"}
                   name="password"
                   placeholder="password"
                   className="input input-bordered text-black bg-opacity-20"
@@ -107,7 +109,10 @@ const Login = () => {
                   {toogle ? <FaRegEye /> : <FaEyeSlash />}
                 </div>
                 <label className="label">
-                  <Link onClick={handleResetPass} className="label-text-alt link link-hover">
+                  <Link
+                    onClick={handleResetPass}
+                    className="label-text-alt link link-hover"
+                  >
                     Forgot password?
                   </Link>
                 </label>
