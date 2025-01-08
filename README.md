@@ -3,6 +3,8 @@
 Welcome to **Career Compass Website**, a platform designed to guide users on their career paths, offering personalized career advice, resume reviews, counseling sessions, and more. We provide a seamless, intuitive experience for users seeking to make informed decisions about their professional futures.
 
 **Live Site URL:** [https://career-compass-371c8.web.app/](https://career-compass-371c8.web.app/)
+** Server site URL:**
+[https://a-sports-equipment-store-server.vercel.app/]
 
 ## Technologies Used
 
@@ -92,3 +94,43 @@ Welcome to **Career Compass Website**, a platform designed to guide users on the
 - **Extra Route**: 
   - A protected private route relevant to the user experience, requiring login for access. the page Stay on Shop Now button on navbar, when user click any book it goes to a privet routes, is user not logged in he/she can access the page and redirect to the login page.
 
+
+## "dependencies"
+    "aos": "^2.3.4",
+    "firebase": "^11.0.2",
+    "localforage": "^1.10.0",
+    "match-sorter": "^8.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-fast-marquee": "^1.6.5",
+    "react-helmet-async": "^2.0.5",
+    "react-icons": "^5.3.0",
+    "react-router-dom": "^6.28.0",
+    "react-toastify": "^10.0.6",
+    "sort-by": "^1.2.0",
+    "swiper": "^11.1.14"
+
+## "devDependencies":
+    "@eslint/js": "^9.13.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.14",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.11.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "vite": "^5.4.10"
+
+  # installing
+
+  ## git clone
+      https://github.com/RaselMridha792/assignment-9-career-counseling
+  ## Install dependencies
+      npm install
+
+  ## create a .env.local and put your firebase api keys
